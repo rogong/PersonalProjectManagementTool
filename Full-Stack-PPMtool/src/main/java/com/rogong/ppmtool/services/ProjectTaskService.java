@@ -1,5 +1,7 @@
 package com.rogong.ppmtool.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,4 +56,7 @@ public class ProjectTaskService {
 
 	}
 
+	public Iterable<ProjectTask>findBacklogId(String id){
+		return projectTaskRepository.findByProjectIdentifierOrderByPriority(id);
+	}
 }
